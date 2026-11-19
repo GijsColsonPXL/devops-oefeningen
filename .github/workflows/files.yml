@@ -1,0 +1,17 @@
+name: Files Example
+on:
+  workflow_dispatch:
+jobs:
+  files-example:
+    runs-on: ubuntu-latest
+    name: Create directory and write an txt file
+    steps:
+      - name: Create directory
+        run: mkdir filesmachine
+      - name: text in file
+        run: echo "This is a test file" > filesmachine/testfile.txt
+      - name: Show directory contents
+        run: ls -la filesmachine
+      - name: Show file contents
+        run: cat filesmachine/testfile.txt
+    
