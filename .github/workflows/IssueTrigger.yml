@@ -1,0 +1,14 @@
+name: Issue Trigger
+on:
+  issues:
+    types: [opened]
+jobs:
+  show-issue:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Show issue title
+        run: echo "Title: ${{ github.event.issue.title }}"
+      - name: Show issue body
+        run: echo "Body: ${{ github.event.issue.body }}"
+      - name: Show issue number
+        run: echo "Issue Number: ${{ github.event.issue.number }}"
